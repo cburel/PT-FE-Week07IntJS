@@ -78,9 +78,7 @@ function concatWords(word, n){
 console.log(`Concatenation: ${concatWords('Hello', 3)}`);
 
 // 8. Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
-function makeFullName(firstName, lastName){
-    return `${firstName} ${lastName}`;
-}
+const makeFullName = (firstName, lastName) => `${firstName} ${lastName}`;
 // test it
 console.log(`Full name: ${makeFullName("Chris", "Smith")}`);
 
