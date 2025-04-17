@@ -17,9 +17,10 @@ for (age of ages){
     sum += age;
 }
 let average = sum / ages.length;
+// log it
 console.log(`Average age: ${average}`);
 
-// 2. names array
+// 2. initialize names array
 let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
 // 2.1 iterate through names and calc. average number of letters per name
@@ -28,6 +29,7 @@ for (n of names){
     totLetters += n.length;
 }
 let avgLetters = totLetters / names.length;
+// log it
 console.log(`Average number of letters: ${avgLetters}`);
 
 // 2.2 iterate through names and concat. all names together, separated by spaces
@@ -35,6 +37,7 @@ let concatNames = "";
 for (n of names){
     concatNames += `${n} `
 }
+// log it
 console.log(`Concatenated names: ${concatNames}`);
 
 // 3. access the last element in an array by using array.length - 1. for example:
@@ -52,6 +55,7 @@ let nameLengths = [];
 for (let i = 0; i < names.length; i++){
     nameLengths.push(names[i].length);
 }
+// log it
 console.log(`Name lengths: ${nameLengths}`);
 
 // 6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
@@ -59,6 +63,7 @@ let nameLengthsSum = 0;
 for (nl of nameLengths){
     nameLengthsSum += nl;
 }
+// log it
 console.log(`Name lengths sum: ${nameLengthsSum}`);
 
 // 7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello').
@@ -69,12 +74,14 @@ function concatWords(word, n){
     }
     return str;
 }
+// test it
 console.log(`Concatenation: ${concatWords('Hello', 3)}`);
 
 // 8. Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
 function makeFullName(firstName, lastName){
     return `${firstName} ${lastName}`;
 }
+// test it
 console.log(`Full name: ${makeFullName("Chris", "Smith")}`);
 
 //9. Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
@@ -83,12 +90,12 @@ function isGreaterThan100(arr){
     for (num of arr){
         sum += num;
     }
+    // the return in the below if block will exit the function if it is hit. therefore there it is not necessary to include an else block specifically for the default return statement.
     if (sum > 100){
         return true;
-    }
+    } 
     return false;
 }
-
 // test it
 let arr1 = [1, 2, 3];
 let arr2 = [100, 104, 108];
@@ -104,7 +111,6 @@ function avgArray(arr){
     let avg = sum / arr.length;
     return avg;
 }
-
 // test it
 console.log(`The average of array 1 is ${avgArray(arr1)}`);
 console.log(`The average of array 2 is ${avgArray(arr2)}`);
@@ -113,17 +119,18 @@ console.log(`The average of array 2 is ${avgArray(arr2)}`);
 function compareArrays(arr1, arr2){
     let avg1 = avgArray(arr1);
     let avg2 = avgArray(arr2);
+    // checks array 1's average against array 2's average
     if (avg1 > avg2){
         return true;
     }
     return false;
 }
-
 // test it
 console.log(`Is array 1's average greater than array 2's average?: ${compareArrays(arr1, arr2)}`);
 
 // 12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 function willBuyDrink(isHotOutside, moneyInPocket){
+    // checks for both conditions
     if (isHotOutside && (moneyInPocket > 10.50)){
         return true;
     }
