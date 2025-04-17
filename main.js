@@ -136,3 +136,20 @@ let moneyInPocket = 11.00;
 console.log(`Will you buy a drink?: ${willBuyDrink(isHotOutside, moneyInPocket)}`);
 
 // 13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+// rolls a 6 - 20-sided die. created for personal use as i frequently roll dice (virtual or physical) when deciding something based on RNG (e.g., did my character connect their hit? did they luck out in a scenario? etc)
+function rollDie(sides){
+    if (sides < 6 || sides > 20){
+        console.log(`Sides must be between 6 and 20. You chose ${sides}.`);
+    }
+    else {
+        // Math.floor: rounds down and returns largest int <= to a number
+        // Math.random: returns a float between 0 and 1
+        // the below line of code takes the float, multiplies it by the sides, and rounds it down. add 1 to prevent 0 result. log it to the console.
+        console.log(`You rolled a ${sides}-sided die and got a ${Math.floor(Math.random() * sides) + 1}!`);
+    }
+}
+
+// test it
+rollDie(2);
+rollDie(50);
+rollDie(20);
