@@ -158,3 +158,24 @@ function rollDie(sides){
 rollDie(2);
 rollDie(50);
 rollDie(20);
+
+// 13a. a second custom function that's very similar in concept to the above, but returns a random number between two given numbers instead. used for deciding between a number of items.
+function getInt(min, max){
+    // rounds up and returns smallest integer <= min
+    min = Math.ceil(min);
+    // rounds down and returns largest int <= max
+    max = Math.floor(max);
+    // explained below the fn
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// roll the rng
+let min = 3;
+let max = 10;
+console.log(`You chose an integer between ${min} and ${max} and got ${getInt(min, max)}!`);
+// ^^^
+// Math.random() gives a random float between 0 and 1
+// We want a random number - int included
+// So we multiply Math.random() by the result of the size of the range.
+// e.g., a random number between 1 and 10 needs a multiply by 10, so the decimal becomes the int.
+// we add 1 because the range given by the size is non-inclusive. this addition makes it inclusive.
+// we add another min to shift the range to include the min value through the max value.
